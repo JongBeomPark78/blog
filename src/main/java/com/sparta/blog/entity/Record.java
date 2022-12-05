@@ -26,11 +26,16 @@ public class Record extends Timestamped {
     @Column(nullable = false)
     private String contents;
 
-    public Record(RecordRequestDto requestDto){
+    //User와 연결을 위해서 생성했다.
+    @Column(nullable = false)
+    private Long userId;
+
+    public Record(RecordRequestDto requestDto, Long userId){
         this.title = requestDto.getTitle();
         this.author = requestDto.getAuthor();
         this.password = requestDto.getPassword();
         this.contents = requestDto.getContents();
+        this.userId = requestDto.getuserId();
     }
 
 

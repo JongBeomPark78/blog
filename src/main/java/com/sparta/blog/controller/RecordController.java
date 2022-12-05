@@ -44,6 +44,7 @@ public class RecordController {
     //게시글 삭제
     @DeleteMapping("/api/delete/{id}")
     public ResponseDto deleteRecord(@PathVariable Long id){
+
         return recordService.deleteRecord(id);
     }
 
