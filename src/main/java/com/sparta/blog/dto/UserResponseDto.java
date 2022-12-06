@@ -5,11 +5,12 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class ResponseDto {
+public class UserResponseDto {
     private String msg;
-    public ResponseDto(String msg){
+    private long statusCode;
+
+    public UserResponseDto(String msg, long statusCode){
         this.msg = msg;
+        this.statusCode = statusCode;
     }
-
-
 }

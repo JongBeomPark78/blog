@@ -10,16 +10,23 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class RecordResponseDto {
     private String title;
-    private String author;
     private String contents;
     private LocalDateTime createdAt;
 
+    private LocalDateTime modifiedAt;
+
+    private long id;
+    private String username;
+
 
     public RecordResponseDto(Record sample) {
+        this.id = sample.getId();
         this.title = sample.getTitle();
-        this.author = sample.getAuthor();
         this.contents = sample.getContents();
         this.createdAt = sample.getCreatedAt();
+        this.modifiedAt = sample.getModifiedAt();
+        this.username = sample.getUsername();
+
     }
 
 

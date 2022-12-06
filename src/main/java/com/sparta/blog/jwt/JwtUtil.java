@@ -53,6 +53,7 @@ public class JwtUtil {
     //HttpServletRequest 객체 안에는 우리가 가져와야 할 토큰이 헤더에 들어와 있다. 그래서 request.getHeader를 사용해서 가져온다.
     public String resolveToken(HttpServletRequest request) {
         String bearerToken = request.getHeader(AUTHORIZATION_HEADER);
+        /*System.out.println("bearerToken = " + bearerToken);*/
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith(BEARER_PREFIX)) {
             //substring을 하는 이유는 BEARER로 시작하기 때문에 앞에 6자에 공백 한 칸을 지워준다.
             //BEARER은 TOKEN과 아무런 상관이 없는 글자이다.
